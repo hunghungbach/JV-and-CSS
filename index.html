@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web với JavaScript và CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFE3E3;
+        }
+        .container {
+            margin: 50px;
+            padding: 20px;
+            border: 1px solid #000;
+            width: 80%;
+            background-color: #FEF9F2;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+        button, select {
+            margin-right: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #FEF9F2;
+        }
+        #NoiDung {
+            border: 1px solid black;
+            padding: 10px;
+            width: 100%;
+            min-height: 100px;
+            margin-top: 10px;
+            white-space: pre-line;
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>JV và CSS</h2>
+    
+    <div class="buttons">
+        <button onclick="setColor('#C4E1F6')">Xanh</button>
+        <button onclick="setColor('#F95454')">Đỏ</button>
+        <button onclick="setColor('#FEFFA7')">Vàng</button>
+        <button onclick="setColor('')">Không màu</button>
+
+        <select id="fontSize" >
+            <option value="20px">20px</option>
+            <option value="25px">25px</option>
+            <option value="30px">30px</option>
+        </select>
+        <button onclick="setFontSize()">Đặt cỡ chữ</button>
+
+        <select id="heightSize" >
+            <option value="100px">100px</option>
+            <option value="150px">150px</option>
+            <option value="200px">200px</option>
+        </select>
+        <button onclick="setHeight()">Đặt chiều cao</button>
+        <button onclick="increaseHeight()">Tăng chiều cao</button>
+    </div>
+
+    <button onclick="setTitleCSS()">Nạp css tiêu đề</button>
+    <button onclick="setContentCSS()">Nạp css nội dung</button>
+
+    <div id="NoiDung">
+        31OHSSV O113H
+    </div>
+</div>
+
+<script>
+    function setColor(color) {
+        document.getElementById("NoiDung").style.backgroundColor = color;
+    }
+
+    function setFontSize() {
+        var size = document.getElementById("fontSize").value;
+        document.getElementById("NoiDung").style.fontSize = size;
+    }
+
+    function setHeight() {
+        var height = document.getElementById("heightSize").value;
+        document.getElementById("NoiDung").style.height = height;
+    }
+
+    function increaseHeight() {
+        var currentHeight = document.getElementById("NoiDung").offsetHeight;
+        document.getElementById("NoiDung").style.height = (currentHeight + 20) + 'px';
+    }
+
+    function setTitleCSS() {
+        var noiDung = document.getElementById("NoiDung");
+        noiDung.style.textAlign = "center";
+        noiDung.style.fontFamily = "Arial";
+        noiDung.style.fontWeight = "bold";
+        noiDung.style.fontSize = "45px";
+        noiDung.style.color = "green";
+        noiDung.style.fontStyle = "normal";
+    }
+
+    function setContentCSS() {
+        var noiDung = document.getElementById("NoiDung");
+        noiDung.style.textAlign = "center";
+        noiDung.style.fontFamily = "Times New Roman";
+        noiDung.style.fontStyle = "italic"
+        noiDung.style.fontSize = "30px";
+        noiDung.style.color = "pink";
+    }
+</script>
+
+</body>
+</html>
